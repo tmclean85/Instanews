@@ -1,0 +1,26 @@
+{
+  "name": "instanews",
+  "version": "1.0.0",
+  "description": "A news ticker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmclean85/Project-02---NYT-News-App.git"
+  },
+  "author": "Trevor McLean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmclean85/Project-02---NYT-News-App/issues"
+  },
+  "homepage": "https://github.com/tmclean85/Project-02---NYT-News-App#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  }
+}
