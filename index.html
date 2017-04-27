@@ -3,41 +3,19 @@
 <head>
   <title>NYT News App</title>
   <meta charset="utf-8">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="./build/css/style.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <section class="main-logo-wrapper">
     <img class="nyt-logo" src="images/nyt-logo.svg">
     <p>Choose a section:</p>
-    <form class="category-dropdown">
-      <select name="Sections">
+    <form class="category-dropdown" id="category-dropdown">
+      <select name="Sections" id="sections">
         <option class="dropdown-item" value="home">Home</option>
-        <option class="dropdown-item" value="opinion" onchange="location = www.google.ca;">Opinion</option>
-        <option class="dropdown-item" value="world">World</option>
-        <option class="dropdown-item" value="national">National</option>
-        <option class="dropdown-item" value="politics">Politics</option>
-        <option class="dropdown-item" value="upshot">Upshot</option>
-        <option class="dropdown-item" value="nyregion">NY Region</option>
-        <option class="dropdown-item" value="business">Business</option>
-        <option class="dropdown-item" value="technology">Technology</option>
-        <option class="dropdown-item" value="science">Science</option>
-        <option class="dropdown-item" value="health">Health</option>
-        <option class="dropdown-item" value="sports">Sports</option>
-        <option class="dropdown-item" value="arts">Arts</option>
-        <option class="dropdown-item" value="books">Books</option>
-        <option class="dropdown-item" value="movies">Movies</option>
-        <option class="dropdown-item" value="theater">Theater</option>
-        <option class="dropdown-item" value="sundayreview">Sunday Review</option>
-        <option class="dropdown-item" value="fashion">Fashion</option>
-        <option class="dropdown-item" value="magazine">Magazine</option>
-        <option class="dropdown-item" value="realestate">Real Estate</option>
-        <option class="dropdown-item" value="automobiles">Automobiles</option>
-        <option class="dropdown-item" value="obituaries">Obituaries</option>
-        <option class="dropdown-item" value="insider">Insider</option>
       </select>
     </form>
     <div class="story-list">
-      
+      <ul id="story-item"></ul>
     </div>  
     <div class="copyright-info">
       <p>Copyright 2016 INSTANEWS</p>

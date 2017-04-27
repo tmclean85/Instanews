@@ -1,0 +1,59 @@
+html {
+  font-size: 16px;
+  background: black;
+}
+
+body {
+  display: flex;
+
+}
+
+.main-logo-wrapper {
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    min-height: 60rem;
+    max-height: 60rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-logo-wrapper img {
+  display: flex;
+  min-width: 20rem;
+  max-width: 20rem;
+}
+
+.main-logo-wrapper p {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'open_sanslight';
+  font-style: normal;
+  font-weight: light;
+  color: #ffffff;
+  padding-top: 2rem;
+}
+
+.footer-info {
+  display: inline-block;
+
+}
+
+.copyright-info p {
+  font-size: 1rem;
+  padding-top: 20rem;
+}
+
+.category-dropdown {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  min-width: 30%;
+}
+
+#dropdown-item {
+  min-width: 100%;
+}
