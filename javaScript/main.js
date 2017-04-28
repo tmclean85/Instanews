@@ -17,13 +17,13 @@ $(function(){
       if(!storyCategory.includes(value.section))
         storyCategory += '<option class="dropdown-item">' + value.section + '</option>'
       
-      var all_sections = [data];
+      var allSections = [data];
       var uniques = [];
-      $.each(all_sections, function(i, section){
-        var section_name = section.data;
+      $.each(allSections, function(i, section){
+        var sectionName = section.data;
         var already_added = false;
         $.each(uniques, function(i, unique_section) {
-          if (unique_section.data === section_name) {
+          if (unique_section.data === sectionName) {
             already_added = true;
           }
         });
@@ -38,5 +38,15 @@ $(function(){
   })
   .fail(function(err) {
     console.log('ERROR', err);
-  })
+
+
+ /*   var allSections = '';
+    var storyImage = [data];
+  }).done(function(data){
+    $.each(data.results, function (index, value){
+      if(storyImage.includes(value.url))
+        storyImage += '<li class=\"story-block\"><a href=\"\"><img src=\"' + value.url +'\"></a></li>'
+    });
+*/
+  });
 });
