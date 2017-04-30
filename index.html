@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>NYT News App</title>
   <meta charset="utf-8">
   <link href="./build/css/style.min.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
   <header class="main-logo-wrapper">
     <img class="nyt-logo" src="images/nyt-logo.svg">
@@ -18,21 +20,25 @@
         <option class="dropdown-item" value="books">Books</option>
       </select>
     </form>
-    <section class="story-container">
-    <div class="story-list">
-      <ul class="story-item" id="story-item">
-      </ul>
+    <div class="loading-gif">
+      <img src="/Users/trevormclean/Desktop/RED/project-02/images/ajax-loader.gif">
     </div>
-    </section>  
+    <section class="story-container">
+      <div class="story-list">
+        <ul class="story-item" id="story-item">
+        </ul>
+      </div>
+    </section>
     <div class="copyright-info">
       <p>Copyright 2016 INSTANEWS</p>
-    </div>  
-  </header> 
+    </div>
+  </header>
   <footer>
   </footer>
   <script src="lib/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="./build/js/main.min.js"></script>
 </body>
+
 </html>
 
 
