@@ -14,7 +14,6 @@ body {
   font-style: italic;
   font-weight: bold;
   justify-content: center;
-  max-height: 60rem;
   min-height: 60rem;
   width: 100%;
 
@@ -57,20 +56,32 @@ body {
   min-width: 100%;
 }
 
-.story-container {
-  color: white;
-}
-
 .story-list {
+  color: white;
+  position: relative;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 
 }
 
-.story-box {
+.story-box-container {
   display: flex;
   min-width: 100%;
-  min-height: 25rem;
+  height: 25rem;
+  background-size: cover;
+  position: relative;
+}
+
+.story-box {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  
+  
+
+  p {
+  
+  }
 }

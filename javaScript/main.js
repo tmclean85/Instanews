@@ -1,9 +1,10 @@
 
   $(function(){
-  
-$('.stories-list ul').empty();  
 
- $('select').change(function(){
+var storiesList = $('#story-item')
+
+$('select').change(function(){
+$(storiesList).empty();  
   
 var url = 'https://api.nytimes.com/svc/topstories/v2/';
   url+=$(this).val();
@@ -22,26 +23,30 @@ $.ajax({
 
      $.each(articleGroup, function(key, value) {
       var url = value.url;
-      var pic = value.multimedia.url;
+      var pic = value.multimedia[4].url;
       var title = value.title;
       var caption = value.abstract;
+      var appendItem = '';
 
 
-
-     articleGroup.forEach(function(){
-         $('#story-item').append(appendItem)
-  var appendItem = '';
+    
+        
+  
   console.log(title)
-      appendItem += '<div class="story-box-container"><li class="story-box"><a href="';
+      appendItem += '<div class="story-box-container" style="background-image: url('
+      appendItem += pic
+      appendItem += '");"><li class="story-box"><a href="';
       appendItem += url;
       appendItem += '"><p>';
       appendItem += caption;
       appendItem += '</p></a></li></div>';
+       $('#story-item').append(appendItem)
       
-console.log(appendItem)
+console.log(pic)
        });
      });
   });
  });
-});
+
+
    
