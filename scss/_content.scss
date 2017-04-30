@@ -43,7 +43,7 @@ body {
 
 .copyright-info p {
   font-size: 1rem;
-  padding-top: 15rem;
+  padding-top: 10rem;
 }
 
 .category-dropdown {
@@ -57,3 +57,20 @@ body {
   min-width: 100%;
 }
 
+.story-container {
+  color: white;
+}
+
+.story-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.story-box {
+  display: flex;
+  min-width: 100%;
+  min-height: 25rem;
+}

@@ -1,52 +1,47 @@
-$(function(){
+
+  $(function(){
   
-  var url = 'https://api.nytimes.com/svc/topstories/v2/home.json';
-  url += '?' + $.param({
-    'api-key': 'a1f474fef60b4344b4a905fde1e852da'
-  });
+$('.stories-list ul').empty();  
+
+ $('select').change(function(){
   
-  var storyCategory = '';
-  var sections = '';
+var url = 'https://api.nytimes.com/svc/topstories/v2/';
+  url+=$(this).val();
+  url+='.json';
+  url += '?' + $.param({'api-key': '2eb56f19cf854564af82b4d0641928ec'});
   
-  $.ajax({
-    url: url,
-    method: 'GET',
-  })
-  .done(function(data) {
+$.ajax({
+      url: url,
+      method: 'GET',
+    }).done(function(data) {
     $.each(data.results, function(index, value){
-      if(!storyCategory.includes(value.section))
-        storyCategory += '<option class="dropdown-item">' + value.section + '</option>'
-      
-      var allSections = [data];
-      var uniques = [];
-      $.each(allSections, function(i, section){
-        var sectionName = section.data;
-        var already_added = false;
-        $.each(uniques, function(i, unique_section) {
-          if (unique_section.data === sectionName) {
-            already_added = true;
-          }
-        });
-        if (!already_added) {
-          uniques.push(section);
-        }
-      });
-      console.log(uniques);
-      
-    })
-    $('#sections').append(storyCategory);
-  })
-  .fail(function(err) {
-    console.log('ERROR', err);
+}); 
+ var articleGroup = data.results.filter(function (item) {
+      return item.multimedia.length; 
+    }).slice(0, 12);
+
+     $.each(articleGroup, function(key, value) {
+      var url = value.url;
+      var pic = value.multimedia.url;
+      var title = value.title;
+      var caption = value.abstract;
 
 
- /*   var allSections = '';
-    var storyImage = [data];
-  }).done(function(data){
-    $.each(data.results, function (index, value){
-      if(storyImage.includes(value.url))
-        storyImage += '<li class=\"story-block\"><a href=\"\"><img src=\"' + value.url +'\"></a></li>'
-    });
-*/
+
+     articleGroup.forEach(function(){
+         $('#story-item').append(appendItem)
+  var appendItem = '';
+  console.log(title)
+      appendItem += '<div class="story-box-container"><li class="story-box"><a href="';
+      appendItem += url;
+      appendItem += '"><p>';
+      appendItem += caption;
+      appendItem += '</p></a></li></div>';
+      
+console.log(appendItem)
+       });
+     });
   });
+ });
 });
+   
