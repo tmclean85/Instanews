@@ -1,13 +1,13 @@
 
 
-html {
-  background: black;
+html { 
   font-size: 16px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-  display: flex;
-  flex-flow: column nowrap;
+  background: black;
 }
 
 p {
@@ -29,13 +29,18 @@ ul {
   list-style: none;
 }
 
-.main-wrapper {
+
+
+.content-wrapper {
   display: flex;
+  flex-flow: column nowrap;
   font-style: italic;
   font-weight: bold;
   justify-content: center;
-  min-height: 30rem;
+  align-items: center;
+  height: 100%;
   width: 100%;
+  padding-bottom: 8rem;
 
   img {
     width: 20rem;
@@ -55,12 +60,6 @@ ul {
   min-width: 100%;
 }
 
-.story-list {
-  color: white;
-  position: relative;
-  display: flex;
-}
-
 .story-box-container {
   display: flex;
   width: 100%;
@@ -68,7 +67,11 @@ ul {
   position: relative;  
 }
 
-
+.story-item {
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
 
 .story-box {
   display: flex;
@@ -80,7 +83,7 @@ ul {
 .text-box {
   background: rgba(0, 0, 0, .50);
   height: auto;
-  align-self: flex-end;
+  position: relative;
 }
 
 .loading-gif {
@@ -99,23 +102,39 @@ ul {
 .copyright-info {
   display: flex;
   justify-content: center;
+
+  p {
+    color: #c2c2c2;
+  }
 }
   
 
 
 @media (min-width: 600px) and (max-width: 1239px) {
 
-  .main-wrapper {
-    @include main-wrapper-resize;
-  }
-
   .content-wrapper {
     @include content-wrapper-resize;
+    margin-bottom: 8rem;
   }
 
   .content-wrapper img {
     width: 15rem;
     padding: 0;
+  }
+
+  .content-wrapper-alt {
+    padding: 0.5rem;
+    height: auto;
+    max-height: 18rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+
+    img {
+      width: 10rem;
+    }
   }
 
   .content-sub-wrapper {
@@ -149,24 +168,38 @@ ul {
 
 
 @media (min-width: 1240px) {
-
-  .main-wrapper {
-    justify-content: flex-start;
-    height: 50%;
-    max-height: 75%;
-  }
+  
 
   .content-wrapper {
     @include content-wrapper-resize;
+    justify-content: flex-start;
+    padding-top: 10rem;
+  }
+
+  .content-wrapper-alt {
+    padding: 0.5rem;
+    height: auto;
+    max-height: 18rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
   }
 
   .content-wrapper img {
     width: 15rem;
-    padding: 0;
+    padding: 0.5rem;
+    
   }
 
   .content-sub-wrapper {
     @include content-sub-wrapper;
+    height: 8rem;
   }
 
   .story-box-container {
@@ -179,18 +212,16 @@ ul {
   }
 
 
-  .story-box {
-    display: inline-block;
-  }
-
-  footer {
+  .copyright-info {
     display: flex;
     justify-content: flex-start;
 
-    .copyright-info p {
-      padding-left: 4rem;
+    p {
+      position: absolute;
+      padding-left: 6rem;
     }
+     
   }
+ }
 
 
-}

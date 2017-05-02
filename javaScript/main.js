@@ -9,8 +9,9 @@ $(document).ready(function () {
 
     $('select').change(function () {
       $(storiesList).empty();
+      $('.content-wrapper').removeClass('content-wrapper-alt')
       $('.loading-gif').show();
-
+      $('.content-wrapper').addClass('content-wrapper-alt');
 
       var url = 'https://api.nytimes.com/svc/topstories/v2/';
       url += $(this).val();
@@ -34,14 +35,14 @@ $(document).ready(function () {
           var caption = value.abstract;
           var appendItem = '';
 
-          appendItem += '<div class="story-box-container"><li class="story-box" style="background-image: url('  
+          appendItem += '<div class="story-box-container"><li class="story-box" style="background-image: url('
           appendItem += pic
           appendItem += '");"><a href="';
           appendItem += url;
           appendItem += '"><div class="text-box"><p>';
           appendItem += caption;
           appendItem += '</p></div></a></li></div>';
-        
+
           $('#story-item').append(appendItem);
           console.log(appendItem);
           $('.loading-gif').hide();
