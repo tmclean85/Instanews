@@ -4,9 +4,6 @@ $(document).ready(function () {
 
     var storiesList = $('#story-item')
 
-
-
-
     $('select').change(function () {
       $(storiesList).empty();
       $('.content-wrapper').removeClass('content-wrapper-alt')
