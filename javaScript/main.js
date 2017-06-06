@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 $('.loading-gif').hide();
 $(document).ready(function () {
   $(function () {
@@ -32,22 +34,21 @@ $(document).ready(function () {
           var caption = value.abstract;
           var appendItem = '';
 
-          appendItem += '<div class="story-box-container"><li class="story-box" style="background-image: url('
-          appendItem += pic
-          appendItem += '");"><a href="';
+          appendItem += '<a href="';
           appendItem += url;
+          appendItem += '"><li class="story-box" style="background-image: url('
+          appendItem += pic
           appendItem += '"><div class="text-box"><p>';
           appendItem += caption;
-          appendItem += '</p></div></a></li></div>';
+          appendItem += '</p></div>/li></a>';
 
           $('#story-item').append(appendItem);
-          console.log(appendItem);
           $('.loading-gif').hide();
         });
       });
     });
   });
 });
-
+});
 
    
