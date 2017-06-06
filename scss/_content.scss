@@ -94,7 +94,7 @@ ul {
 .text-box {
   background: rgba(0, 0, 0, .50);
   height: auto;
-  min-height: 8rem;
+  min-height: 5rem;
   position: absolute;
   bottom: 0;
 }
@@ -160,7 +160,7 @@ ul {
     }
   }
 
-  .story-box {
+  .story-box-container {
     width: 33%;
   }
 
@@ -171,6 +171,7 @@ ul {
 
   .story-box {
     display: inline-block;
+    width: 33%;
   }
 }
 

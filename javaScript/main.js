@@ -43,8 +43,8 @@ $(document).ready(function () {
             appendItem += '</p></div></a></li>';
 
             $('#story-item').append(appendItem);
-            $('.loading-gif').hide();
           });
+            $('.loading-gif').hide();     
         });
       });
     });
