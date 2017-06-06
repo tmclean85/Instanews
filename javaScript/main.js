@@ -34,13 +34,13 @@ $(document).ready(function () {
             var caption = value.abstract;
             var appendItem = '';
 
-          appendItem += '<div class="story-box-container"><li class="story-box" style="background-image: url('
-          appendItem += pic
-          appendItem += '");"><a href="';
-          appendItem += url;
-          appendItem += '"><div class="text-box"><p>';
-          appendItem += caption;
-          appendItem += '</p></div></a></li></div>';
+            appendItem += '<li class="story-box" style="background-image: url('
+            appendItem += pic            
+            appendItem += '"><a href="';
+            appendItem += url;                        
+            appendItem += '"><div class="text-box"><p>';
+            appendItem += caption;
+            appendItem += '</p></div></a></li>';
 
             $('#story-item').append(appendItem);
             $('.loading-gif').hide();
