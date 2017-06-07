@@ -20,31 +20,36 @@ $(document).ready(function () {
         $.ajax({
           url: url,
           method: 'GET',
-        }).done(function (data) {
-          $.each(data.results, function (index, value) {
-          });
-          var articleGroup = data.results.filter(function (item) {
-            return item.multimedia.length;
-          }).slice(0, 12);
-
-          $.each(articleGroup, function (key, value) {
+        })
+        .done(function (data) {
+          function validArticle(entry){
+            return entry.multimedia.length;
+          }
+          var articleGroup = data.results.filter(validArticle)
+                articleGroup.splice(12);
+          var appendItem = '';
+          $.each(articleGroup, function(item, value){
             var url = value.url;
             var pic = value.multimedia[4].url;
-            var title = value.title;
             var caption = value.abstract;
-            var appendItem = '';
-
-            appendItem += '<li class="story-box" style="background-image: url('
-            appendItem += pic            
-            appendItem += '"><a href="';
-            appendItem += url;                        
+            appendItem += '<li class="story-box" style="background-image: url(';
+            appendItem += pic;
+            appendItem += ')"><a href="';
+            appendItem += url;
             appendItem += '"><div class="text-box"><p>';
             appendItem += caption;
             appendItem += '</p></div></a></li>';
+          });     
 
-            $('#story-item').append(appendItem);
-          });
-            $('.loading-gif').hide();     
+          $('.loading-gif').hide();
+          $('#story-item').append(appendItem);
+        })
+
+        .fail(function (){
+          $('.loading-gif').hide();
+          $('#story-item').append(
+            '<h1>No stories available...</h1>'
+          )
         });
       });
     });
