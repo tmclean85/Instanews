@@ -1,8 +1,9 @@
-#RED Academy WebDev Professional Spring 2017
-#Project-02
-#New York Times News App
 
-##==KEY LEARNINGS / IMPLEMENTATIONS==
+# New York Times InstaNews App
+
+Quickly fetch the current top stories from your categories of interest!
+
+## KEY LEARNINGS / IMPLEMENTATIONS
 
 -Fetch API data and dynamically append to markup (javascript, ajax, json, jquery)
 
